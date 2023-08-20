@@ -68,7 +68,6 @@ const GlobalProvider = ({ children }) => {
         },
       }).then(async () => {
         await updatePartners();
-        forceUpdate();
       });
     } catch (error) {
       console.log(error);
@@ -86,7 +85,6 @@ const GlobalProvider = ({ children }) => {
         },
       }).then(async () => {
         await updateTransactions();
-        forceUpdate();
       });
     } catch (error) {
       console.log(error);
@@ -104,7 +102,6 @@ const GlobalProvider = ({ children }) => {
         },
       }).then(async () => {
         await updateTransactions();
-        forceUpdate();
       });
     } catch (error) {
       console.log(error);
@@ -122,7 +119,6 @@ const GlobalProvider = ({ children }) => {
       }).then(async () => {
         await updateTotalSupply();
         await updateTransactions();
-        forceUpdate();
       });
     } catch (error) {
       console.log(error);
@@ -141,7 +137,6 @@ const GlobalProvider = ({ children }) => {
         },
       }).then(async () => {
         await updateTransactions();
-        forceUpdate();
       });
     } catch (error) {
       console.log(error);
@@ -160,7 +155,6 @@ const GlobalProvider = ({ children }) => {
       }).then(async () => {
         await updateBalance();
         await updateTransactions();
-        forceUpdate();
       });
     } catch (error) {
       console.log(error);
@@ -178,7 +172,6 @@ const GlobalProvider = ({ children }) => {
       }).then(async () => {
         await updateBalance();
         await updateTransactions();
-        forceUpdate();
       });
     } catch (error) {
       console.log(error);
@@ -260,14 +253,6 @@ const GlobalProvider = ({ children }) => {
       updateTransactions();
     }
   }, [isWeb3Enabled, account]);
-
-  const [loading, setLoading] = useState(false);
-  const forceUpdate = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 0);
-  };
 
   const value = {
     account,

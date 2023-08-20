@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { useMoralis } from "react-moralis";
 import flipcoinImage from "../../assets/flipcoin.png";
 import flipcoinLogoImage from "../../assets/flipcoin-logo.png";
+import { useGlobal } from "../../context/GlobalContext";
 
 const Header = () => {
   const { enableWeb3, account, isWeb3Enabled, Moralis, isWeb3EnableLoading } =
     useMoralis();
+  const { updateStates } = useGlobal();
 
   const handleConnectWallet = async () => {
     try {
